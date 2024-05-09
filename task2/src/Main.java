@@ -5,30 +5,45 @@ public class Main {
         System.out.println("\t\t\t***Программа определения весов товаров***\n\n\n");
 
         System.out.println("Введите первый вес: ");
-        double first = new Scanner(System.in).nextDouble();
+        double a = new Scanner(System.in).nextDouble();
 
         System.out.println("Введите второй вес: ");
-        double second = new Scanner(System.in).nextDouble();
+        double b = new Scanner(System.in).nextDouble();
 
         System.out.println("Введите третий вес: ");
-        double third = new Scanner(System.in).nextDouble();
+        double c = new Scanner(System.in).nextDouble();
 
         double greatest = 0;
         double average = 0;
         double smallest = 0;
-        //todo дописать логику программы ниже.
 
 
+        if (a > b && a > c) {
+            greatest = a;
+        } else if (b > a && b > c) {
+            greatest = b;
+        } else if (c > a && c > b) {
+            greatest = c;
+        }
 
+        if (a < b && a < c) {
+            smallest = a;
+        } else if (b < a && b < c) {
+            smallest = b;
+        } else if (c < a && c < b) {
+            smallest = c;
+        }
 
+        if ((a > b && a < c) || (a < b && a > c)) {
+            average = a;
+        } else if ((b > a && b < c)||( b > c && b < a )){
+            average = b;
+        } else if ((c < b && c > a )||(c > b && c < a )){
+            average = c;
+        }
 
-
-
-        //todo
-
-
-        System.out.println("Наибольший вес: " + 10);
-        System.out.println("Средний вес: " + 9);
-        System.out.println("Наименьший вес: " + 1);
+        System.out.println("Наибольший вес: " + greatest);
+        System.out.println("Средний вес: " + average);
+        System.out.println("Наименьший вес: " + smallest);
     }
 }
